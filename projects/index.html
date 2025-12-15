@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Projects | Ahsan</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio of projects by Ahsan – Web development, WordPress, and custom solutions.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYKDDPB5JP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYKDDPB5JP');
+  </script>
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="site-header"></div>
+
+  <!-- Main Content -->
+  <main class="container">
+
+    <section class="card">
+      <h2>Projects & Portfolio</h2>
+      <p>
+        Below are selected projects and demos that showcase my skills and experience.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>Personal Portfolio Website</h3>
+      <p>
+        A fast, SEO-friendly portfolio website built using HTML, CSS, and GitHub Pages.
+      </p>
+      <ul>
+        <li>Clean UI & responsive layout</li>
+        <li>Reusable components</li>
+        <li>Optimized for performance</li>
+      </ul>
+      <a class="btn" href="https://dev-ahsan431.github.io/" target="_blank">View Live</a>
+    </section>
+
+    <section class="card">
+      <h3>WordPress Custom Plugin (Demo)</h3>
+      <p>
+        Custom WordPress plugin featuring dynamic fields, repeaters, and advanced settings logic.
+      </p>
+      <ul>
+        <li>Custom post types & meta handling</li>
+        <li>Advanced form elements</li>
+        <li>Clean, scalable architecture</li>
+      </ul>
+      <a class="btn" href="#" target="_blank">View Details</a>
+    </section>
+
+    <section class="card">
+      <h3>Business Landing Page</h3>
+      <p>
+        High-conversion landing page designed for small businesses.
+      </p>
+      <ul>
+        <li>Fast loading</li>
+        <li>Mobile-first design</li>
+        <li>SEO-friendly structure</li>
+      </ul>
+      <a class="btn" href="#" target="_blank">View Demo</a>
+    </section>
+
+    <section class="card">
+      <h3>Open Source Contributions</h3>
+      <p>
+        Code contributions and personal projects available on GitHub.
+      </p>
+      <a class="btn" href="https://github.com/Dev-Ahsan431" target="_blank">View GitHub</a>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Load Header & Footer -->
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+      });
+
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
+      });
+  </script>
+
+</body>
+</html>

@@ -3,44 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <title>Contact | Ahsan</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Contact Ahsan – Freelance Web Developer for projects, fixes, and collaboration.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="/style.css">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DYKDDPB5JP"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DYKDDPB5JP');
+  </script>
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <h1>Contact</h1>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/resume">Resume</a>
-    </nav>
-  </div>
-</header>
+  <!-- Header -->
+  <div id="site-header"></div>
 
-<main class="container">
+  <!-- Main Content -->
+  <main class="container">
 
-  <section class="card">
-    <h2>Get in Touch</h2>
-    <p>
-      Feel free to reach out for freelance work, collaboration, or questions.
-    </p>
+    <section class="card">
+      <h2>Contact Me</h2>
+      <p>
+        Have a project or question?  
+        Fill out the form below and I’ll get back to you.
+      </p>
 
-    <p><strong>Email:</strong> your@email.com</p>
-    <p><strong>GitHub:</strong>
-      <a href="https://github.com/Dev-Ahsan431" target="_blank">
-        github.com/Dev-Ahsan431
-      </a>
-    </p>
+      <!-- FREE Contact Form -->
+      <form action="https://formsubmit.co/ahsanhabib7672@gmail.com" method="POST">
+        <!-- IMPORTANT CONFIG -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="New message from portfolio">
+        <input type="hidden" name="_template" value="table">
 
-    <a class="btn" href="/">← Back to Home</a>
-  </section>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" required>
 
-</main>
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
 
-<footer>
-  © 2025 Ahsan
-</footer>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send Message</button>
+      </form>
+
+      <p style="margin-top:20px;">
+        Or email me directly at  
+        <strong>ahsanhabib7672@gmail.com</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="site-footer"></div>
+
+  <!-- Load Header & Footer -->
+  <script>
+    fetch('/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
+      });
+
+    fetch('/footer.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-footer').innerHTML = html;
+      });
+  </script>
 
 </body>
 </html>
