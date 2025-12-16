@@ -1,0 +1,164 @@
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.resume-container {
+  max-width: 920px;
+  margin: 40px auto;
+  padding: 40px;
+  background: var(--bg-card);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resume-header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.resume-contact {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.resume-contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.resume-contact a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.resume-section {
+  margin-top: 36px;
+}
+
+.resume-section h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+  margin-bottom: 22px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+/* =========================
+   ITEMS (Experience, Education, Projects)
+   ========================= */
+
+.resume-item {
+  margin-bottom: 26px;
+}
+
+.resume-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.resume-item .role {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.date {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.resume-item p {
+  font-size: 0.95rem;
+}
+
+/* =========================
+   LISTS
+   ========================= */
+
+ul {
+  padding-left: 18px;
+  margin-top: 10px;
+}
+
+li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   SKILLS
+   ========================= */
+
+.skills .skill-group {
+  margin-bottom: 22px;
+}
+
+.skill-group h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   LINKS IN PROJECTS
+   ========================= */
+
+.resume-item a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.resume-item a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+  .resume-container {
+    padding: 24px;
+  }
+
+  .resume-header h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* =========================
+   PRINT (PDF / A4 SAFE)
+   ========================= */
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .resume-container {
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
