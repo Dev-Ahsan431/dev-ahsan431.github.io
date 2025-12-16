@@ -22,6 +22,35 @@
     gtag('js', new Date());
     gtag('config', 'G-DYKDDPB5JP');
   </script>
+
+  <!-- Email Js -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs@4/dist/email.min.js"></script>
+
+  <script>
+    (function(){
+      emailjs.init("TYXNJS4hmYEBVxb8q");
+    })();
+
+    document.getElementById("contact-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      emailjs.sendForm(
+        "service_crine3g",
+        "template_n8fdnyp",
+        this
+      ).then(
+        function() {
+          alert("✅ Message sent successfully!");
+          document.getElementById("contact-form").reset();
+        },
+        function(error) {
+          alert("❌ Failed to send message. Try again.");
+          console.error("EmailJS Error:", error);
+        }
+      );
+    });
+  </script>
+
 </head>
 <body>
 
@@ -39,12 +68,7 @@
       </p>
 
       <!-- FREE Contact Form -->
-      <form action="https://formsubmit.co/ahsanhabib7672@gmail.com" method="POST">
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New message from portfolio">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_domain" value="dev-ahsan431.github.io">
+      <form id="contact-form">
 
         <label>Name</label>
         <input type="text" name="name" required>
@@ -56,7 +80,9 @@
         <textarea name="message" required></textarea>
 
         <button type="submit">Send Message</button>
+
       </form>
+
 
 
       <p style="margin-top:20px;">
