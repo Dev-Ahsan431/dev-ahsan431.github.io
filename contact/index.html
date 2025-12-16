@@ -27,29 +27,39 @@
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
   <script>
-    (function(){
+    document.addEventListener("DOMContentLoaded", function () {
+
       emailjs.init("TYXNJS4hmYEBVxb8q");
-    })();
 
-    document.getElementById("contact-form").addEventListener("submit", function(e) {
-      e.preventDefault();
+      const form = document.getElementById("contact-form");
 
-      emailjs.sendForm(
-        "service_crine3g",
-        "template_n8fdnyp",
-        this
-      ).then(
-        function() {
-          alert("✅ Message sent successfully!");
-          document.getElementById("contact-form").reset();
-        },
-        function(error) {
-          alert("❌ Failed to send message. Try again.");
-          console.error("EmailJS Error:", error);
-        }
-      );
+      if (!form) {
+        console.error("❌ contact-form not found");
+        return;
+      }
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        emailjs.sendForm(
+          "service_crine3g",
+          "template_n8fdnyp",
+          this
+        ).then(
+          function () {
+            alert("✅ Message sent successfully!");
+            form.reset();
+          },
+          function (error) {
+            alert("❌ Failed to send message.");
+            console.error("EmailJS Error:", error);
+          }
+        );
+      });
+
     });
   </script>
+
 
 </head>
 <body>
@@ -69,7 +79,6 @@
 
       <!-- FREE Contact Form -->
       <form id="contact-form">
-
         <label>Name</label>
         <input type="text" name="name" required>
 
@@ -80,8 +89,8 @@
         <textarea name="message" required></textarea>
 
         <button type="submit">Send Message</button>
-
       </form>
+
 
 
 
